@@ -1,0 +1,5 @@
+Changelog for renderResources.
+
+renderResources 1.0.0-pl (March 19, 2012)
+====================================
+- Initial commit
