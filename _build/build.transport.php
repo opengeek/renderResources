@@ -32,7 +32,7 @@ $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 /* set package info */
 define('PKG_NAME','renderresources');
 define('PKG_VERSION','1.0.1');
-define('PKG_RELEASE','dev');
+define('PKG_RELEASE','pl');
 
 /* load builder */
 $modx->loadClass('transport.modPackageBuilder','',false, true);
