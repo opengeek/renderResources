@@ -63,6 +63,18 @@
  * outputSeparator - (Opt) An optional string to separate each tpl instance [default="\n"]
  *
  */
+if (!function_exists('getDivisors')) {
+    function getDivisors($integer) {
+        $divisors = array();
+        for ($i = $integer; $i > 1; $i--) {
+            if (($integer % $i) === 0) {
+                $divisors[] = $i;
+            }
+        }
+        return $divisors;
+    }
+}
+
 $output = array();
 $outputSeparator = isset($outputSeparator) ? $outputSeparator : "\n";
 
