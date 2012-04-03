@@ -1,5 +1,6 @@
 Changelog for renderResources.
 
+- [#1] Set $modx->resourceIdentifier for proper script/TV processing
 - [#2] Conditionally add missing getDivisors function
 
 renderResources 1.0.0-pl (March 19, 2012)
