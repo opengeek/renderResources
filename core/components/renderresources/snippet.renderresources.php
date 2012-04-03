@@ -63,6 +63,18 @@
  * outputSeparator - (Opt) An optional string to separate each tpl instance [default="\n"]
  *
  */
+if (!function_exists('getDivisors')) {
+    function getDivisors($integer) {
+        $divisors = array();
+        for ($i = $integer; $i > 1; $i--) {
+            if (($integer % $i) === 0) {
+                $divisors[] = $i;
+            }
+        }
+        return $divisors;
+    }
+}
+
 $output = array();
 $outputSeparator = isset($outputSeparator) ? $outputSeparator : "\n";
 
@@ -385,6 +397,8 @@ $last = empty($last) ? (count($collection) + $idx - 1) : (integer) $last;
 
 $maxIterations = empty($maxIterations) || (integer) $maxIterations < 1 ? 10 : (integer) $maxIterations;
 $currentResource = $modx->resource;
+$currentResourceIdentifier = $modx->resourceIdentifier;
+$currentElementCache = $modx->elementCache;
 
 /** @var modResource $resource */
 foreach ($collection as $resourceId => $resource) {
@@ -430,6 +444,8 @@ foreach ($collection as $resourceId => $resource) {
     }
 
     $modx->resource = $resource;
+    $modx->resourceIdentifier = $resource->get('id');
+    $modx->elementCache = array();
     $resourceOutput = $modx->resource->process();
     $modx->parser->processElementTags('', $resourceOutput, true, false, '[[', ']]', array(), $maxIterations);
     $modx->parser->processElementTags('', $resourceOutput, true, true, '[[', ']]', array(), $maxIterations);
@@ -442,6 +458,8 @@ foreach ($collection as $resourceId => $resource) {
     $idx++;
 }
 
+$modx->elementCache = $currentElementCache;
+$modx->resourceIdentifier = $currentResourceIdentifier;
 $modx->resource = $currentResource;
 
 /* output */

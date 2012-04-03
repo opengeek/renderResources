@@ -1,7 +1,7 @@
 --------------------
 Snippet: renderResources
 --------------------
-Version: 1.0.0-pl
+Version: 1.0.1-dev
 Released: March 19, 2012
 Since: March 19, 2012
 Author: Jason Coward <jason@modx.com>
