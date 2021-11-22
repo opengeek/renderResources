@@ -2,10 +2,9 @@
 /**
  * renderResources
  *
- * A snippet for MODX 2.x that renders the output of a collection of Resources.
+ * A snippet for MODX Revolution that renders the output of a collection of Resources.
  *
  * @author Jason Coward
- * @copyright Copyright 2012, Jason Coward
  *
  * TEMPLATES
  *

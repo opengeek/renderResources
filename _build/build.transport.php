@@ -31,7 +31,7 @@ $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 
 /* set package info */
 define('PKG_NAME','renderresources');
-define('PKG_VERSION','1.0.1');
+define('PKG_VERSION','1.0.2');
 define('PKG_RELEASE','pl');
 
 /* load builder */
@@ -44,7 +44,7 @@ $builder->createPackage(PKG_NAME, PKG_VERSION, PKG_RELEASE);
 $modx->log(xPDO::LOG_LEVEL_INFO,'Adding in snippet.'); flush();
 $snippet= $modx->newObject('modSnippet');
 $snippet->set('name', 'renderResources');
-$snippet->set('description', '<strong>'.PKG_VERSION.'-'.PKG_RELEASE.'</strong> A snippet for MODx Revolution to render the output from a collection of Resources');
+$snippet->set('description', '<strong>'.PKG_VERSION.'-'.PKG_RELEASE.'</strong> A snippet for MODX Revolution to render the output from a collection of Resources');
 $snippet->set('category', 0);
 $snippet->set('snippet', file_get_contents($sources['source_core'] . '/snippet.renderresources.php'));
 $properties = include $sources['build'].'properties.inc.php';

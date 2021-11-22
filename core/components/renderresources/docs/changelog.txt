@@ -1,5 +1,9 @@
 Changelog for renderResources.
 
+renderResources 1.0.2-pl (November 19, 2021)
+====================================
+- [#6] Replace each() with foreach() for PHP 8 compatibility
+
 renderResources 1.0.1-pl (April 3, 2012)
 ====================================
 - [#1] Set $modx->resourceIdentifier for proper script/TV processing
