@@ -331,33 +331,33 @@ if (!empty($sortbyTV)) {
     if ($modx->getOption('dbtype') === 'mysql') {
         switch ($sortbyTVType) {
             case 'integer':
-                $criteria->select("CAST(IFNULL(tvSort.value, tvDefault.default_text) AS SIGNED INTEGER) AS sortTV");
+                $criteria->select("modResource.*, CAST(IFNULL(tvSort.value, tvDefault.default_text) AS SIGNED INTEGER) AS sortTV");
                 break;
             case 'decimal':
-                $criteria->select("CAST(IFNULL(tvSort.value, tvDefault.default_text) AS DECIMAL) AS sortTV");
+                $criteria->select("modResource.*, CAST(IFNULL(tvSort.value, tvDefault.default_text) AS DECIMAL) AS sortTV");
                 break;
             case 'datetime':
-                $criteria->select("CAST(IFNULL(tvSort.value, tvDefault.default_text) AS DATETIME) AS sortTV");
+                $criteria->select("modResource.*, CAST(IFNULL(tvSort.value, tvDefault.default_text) AS DATETIME) AS sortTV");
                 break;
             case 'string':
             default:
-                $criteria->select("IFNULL(tvSort.value, tvDefault.default_text) AS sortTV");
+                $criteria->select("modResource.*, IFNULL(tvSort.value, tvDefault.default_text) AS sortTV");
                 break;
         }
     } elseif ($modx->getOption('dbtype') === 'sqlsrv') {
         switch ($sortbyTVType) {
             case 'integer':
-                $criteria->select("CAST(ISNULL(tvSort.value, tvDefault.default_text) AS BIGINT) AS sortTV");
+                $criteria->select("modResource.*, CAST(ISNULL(tvSort.value, tvDefault.default_text) AS BIGINT) AS sortTV");
                 break;
             case 'decimal':
-                $criteria->select("CAST(ISNULL(tvSort.value, tvDefault.default_text) AS DECIMAL) AS sortTV");
+                $criteria->select("modResource.*, CAST(ISNULL(tvSort.value, tvDefault.default_text) AS DECIMAL) AS sortTV");
                 break;
             case 'datetime':
-                $criteria->select("CAST(ISNULL(tvSort.value, tvDefault.default_text) AS DATETIME) AS sortTV");
+                $criteria->select("modResource.*, CAST(ISNULL(tvSort.value, tvDefault.default_text) AS DATETIME) AS sortTV");
                 break;
             case 'string':
             default:
-                $criteria->select("ISNULL(tvSort.value, tvDefault.default_text) AS sortTV");
+                $criteria->select("modResource.*, ISNULL(tvSort.value, tvDefault.default_text) AS sortTV");
                 break;
         }
     }
