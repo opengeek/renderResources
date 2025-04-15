@@ -198,7 +198,7 @@ if (empty($showHidden)) {
 if (!empty($hideContainers)) {
     $criteria['isfolder'] = '0';
 }
-$criteria['class_key:IN'] = array('modDocument', 'modStaticResource');
+$criteria['class_key:IN'] = array('modDocument', 'modStaticResource', 'MODX\\Revolution\\modDocument', 'MODX\\Revolution\\modStaticResource');
 /** @var xPDOQuery $criteria */
 $criteria = $modx->newQuery('modResource', $criteria);
 $criteria->innerJoin('modContentType', 'ContentType', array('ContentType.binary' => false, "ContentType.id = modResource.content_type"));
